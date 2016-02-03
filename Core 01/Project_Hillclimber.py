@@ -10,7 +10,13 @@ PROBABILITY = 0.05
 GENERATIONS = 5000
 
 def main():
-	hill_climber()
+	# fits = hill_climber()
+	# plot_graph_a(fits)
+
+	for i in range(0,5):
+		fits = hill_climber()
+		plot_graph_b(fits)
+	plt.show()
 
 def matrix_create(rows, columns):
 	return np.zeros((rows, columns), dtype='f')
@@ -51,12 +57,17 @@ def hill_climber():
 
 		fits[0][currentGeneration] = parentFitness
 
-	plot_graph_a(fits)
+	return fits
 
 def plot_graph_a(fits):
-	plt.plot(fits[0],'k')
+	plt.plot(fits[0])
 	plt.xlabel('Generation')
 	plt.ylabel('Fitness')
 	plt.show()
+
+def plot_graph_b(fits):
+	plt.plot(fits[0])
+	plt.xlabel('Generation')
+	plt.ylabel('Fitness')
 
 main()
