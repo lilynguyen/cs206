@@ -392,7 +392,7 @@ void RagdollDemo::initPhysics()
 	CreateCylinder(7, 0, .75, 2.25, .15, .85, 'y');
 	CreateCylinder(8, 0, .75, -2.25, .15, .85, 'y');
 
-	// CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1)
+	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1);
 
 	clientResetScene();		
 }

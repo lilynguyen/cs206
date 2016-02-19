@@ -25,6 +25,8 @@ GlutDemoApplication.h
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GlutDemoApplication.h
 LinearMath/btAlignedObjectArray.h
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/LinearMath/btAlignedObjectArray.h
+BulletDynamics/ConstraintSolver/btHingeConstraint.h
+/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/BulletDynamics/ConstraintSolver/btHingeConstraint.h
 
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/main.cpp
 RagdollDemo.h
