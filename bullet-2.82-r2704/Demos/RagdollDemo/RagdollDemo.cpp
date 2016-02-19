@@ -116,7 +116,7 @@ public:
 		// Setup the geometry
 		m_shapes[BODYPART_PELVIS] = new btCapsuleShape(btScalar(0.15), btScalar(0.20));
 		m_shapes[BODYPART_SPINE] = new btCapsuleShape(btScalar(0.15), btScalar(0.28));
-		m_shapes[BODYPART_HEAD] = new btCapsuleShape(btScalar(0.40), btScalar(0.20));
+		m_shapes[BODYPART_HEAD] = new btCapsuleShape(btScalar(0.10), btScalar(0.05));
 		m_shapes[BODYPART_LEFT_UPPER_LEG] = new btCapsuleShape(btScalar(0.07), btScalar(0.45));
 		m_shapes[BODYPART_LEFT_LOWER_LEG] = new btCapsuleShape(btScalar(0.05), btScalar(0.37));
 		m_shapes[BODYPART_RIGHT_UPPER_LEG] = new btCapsuleShape(btScalar(0.07), btScalar(0.45));
@@ -326,6 +326,9 @@ public:
 	}
 };
 
+
+
+
 void RagdollDemo::initPhysics()
 {
 	// Setup the basic world
@@ -344,7 +347,7 @@ void RagdollDemo::initPhysics()
 	m_broadphase = new btAxisSweep3 (worldAabbMin, worldAabbMax);
 
 	m_solver = new btSequentialImpulseConstraintSolver;
-// 
+
 	m_dynamicsWorld = new btDiscreteDynamicsWorld(m_dispatcher,m_broadphase,m_solver,m_collisionConfiguration);
 	//m_dynamicsWorld->getDispatchInfo().m_useConvexConservativeDistanceUtil = true;
 	//m_dynamicsWorld->getDispatchInfo().m_convexConservativeDistanceThreshold = 0.01f;
@@ -371,11 +374,9 @@ void RagdollDemo::initPhysics()
 
 	}
 
-	// Spawn one ragdoll
+	// Spawn ragdoll
 	// btVector3 startOffset(1,0.5,0);
 	// spawnRagdoll(startOffset);
-
-	// Spawn second ragdoll
 	// startOffset.setValue(-1,0.5,0);
 	// spawnRagdoll(startOffset);
 
@@ -390,6 +391,8 @@ void RagdollDemo::initPhysics()
 	CreateCylinder(6, -2.25, .75, 0, .15, .85, 'y');
 	CreateCylinder(7, 0, .75, 2.25, .15, .85, 'y');
 	CreateCylinder(8, 0, .75, -2.25, .15, .85, 'y');
+
+	// CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1)
 
 	clientResetScene();		
 }
@@ -429,6 +432,36 @@ void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double
 
 void RagdollDemo::DeleteObject(int index) {
 	m_dynamicsWorld->removeRigidBody(body[index]);
+}
+
+/////////////////
+
+void RagdollDemo::CreateHinge(int index, int body1, int body2, double x, double y, double z, double ax, double ay, double az) {
+	btVector3 p(x, y, z);
+ 	btVector3 a(ax, ay, az);
+	btVector3 p1 = PointWorldToLocal(body1, p);
+	btVector3 p2 = PointWorldToLocal(body2, p);
+	btVector3 a1 = AxisWorldToLocal(body1, a);
+	btVector3 a2 = AxisWorldToLocal(body2, a);
+	joints[index] = new btHingeConstraint(*body[body1], *body[body2],
+	                                               p1, p2,
+	                                               a1, a2, false); 
+}
+
+btVector3 RagdollDemo::PointWorldToLocal(int index, btVector3 &p) {
+	btTransform local1 = body[index]->getCenterOfMassTransform().inverse();
+	return local1 * p;
+}
+
+btVector3 RagdollDemo::AxisWorldToLocal(int index, btVector3 &a) {
+	btTransform local1 = body[index]->getCenterOfMassTransform().inverse();
+	btVector3 zero(0,0,0);
+	local1.setOrigin(zero);
+	return local1 * a;
+}
+
+void RagdollDemo::DestroyHinge(int index) {
+	m_dynamicsWorld->removeConstraint(joints[index]);
 }
 
 /////////////////
@@ -495,11 +528,6 @@ void RagdollDemo::keyboardCallback(unsigned char key, int x, int y)
 		spawnRagdoll(startOffset);
 		break;
 		}
-	case 'p':
-		{
-		pause = !pause;
-		break;
-		}
 	default:
 		DemoApplication::keyboardCallback(key, x, y);
 	}
@@ -511,7 +539,10 @@ void RagdollDemo::keyboardCallback(unsigned char key, int x, int y)
 
 void	RagdollDemo::exitPhysics()
 {
+
 	DeleteObject(0);
+
+	DestroyHinge(0);
 
 	int i;
 
@@ -560,3 +591,8 @@ void	RagdollDemo::exitPhysics()
 
 	
 }
+
+
+
+
+

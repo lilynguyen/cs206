@@ -192,7 +192,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 
 //The product will be built against the headers and libraries located
 // inside the indicated SDK.
-CMAKE_OSX_SYSROOT:STRING=
+CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=BULLET_PHYSICS
@@ -262,13 +262,13 @@ GIMPACTUtils_LIB_DEPENDS:STATIC=
 GLUI_LIB_DEPENDS:STATIC=
 
 //Path to a file.
-GLUT_INCLUDE_DIR:PATH=/System/Library/Frameworks/GLUT.framework/Headers
+GLUT_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/GLUT.framework/Headers
 
 //Cocoa framework for OSX
-GLUT_cocoa_LIBRARY:FILEPATH=/System/Library/Frameworks/Cocoa.framework
+GLUT_cocoa_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework
 
 //GLUT library for OSX
-GLUT_glut_LIBRARY:FILEPATH=/System/Library/Frameworks/GLUT.framework
+GLUT_glut_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/GLUT.framework
 
 //Dependencies for target
 HACD_LIB_DEPENDS:STATIC=
@@ -289,7 +289,7 @@ INTEL_OPENCL_ICD_CFG:PATH=INTEL_OPENCL_ICD_CFG-NOTFOUND
 INTEL_OPENCL_INCLUDES:PATH=INTEL_OPENCL_INCLUDES-NOTFOUND
 
 //Path to a library.
-INTEL_OPENCL_LIBRARIES:FILEPATH=/System/Library/Frameworks/OpenCL.framework
+INTEL_OPENCL_LIBRARIES:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenCL.framework
 
 //Internal update serialization structures
 INTERNAL_UPDATE_SERIALIZATION_STRUCTURES:BOOL=OFF
@@ -316,22 +316,22 @@ NVIDIA_OPENCL_ICD_CFG:PATH=NVIDIA_OPENCL_ICD_CFG-NOTFOUND
 NVIDIA_OPENCL_INCLUDES:PATH=NVIDIA_OPENCL_INCLUDES-NOTFOUND
 
 //Path to a library.
-NVIDIA_OPENCL_LIBRARIES:FILEPATH=/System/Library/Frameworks/OpenCL.framework
+NVIDIA_OPENCL_LIBRARIES:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenCL.framework
 
 //Include for OpenCL on OSX
-OPENCL_INCLUDE_DIR:PATH=/System/Library/Frameworks/OpenCL.framework
+OPENCL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenCL.framework
 
 //OpenCL lib for OSX
-OPENCL_LIBRARY:FILEPATH=/System/Library/Frameworks/OpenCL.framework
+OPENCL_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenCL.framework
 
 //Include for OpenGL on OSX
-OPENGL_INCLUDE_DIR:PATH=/System/Library/Frameworks/OpenGL.framework
+OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework
 
 //OpenGL lib for OSX
-OPENGL_gl_LIBRARY:FILEPATH=/System/Library/Frameworks/OpenGL.framework
+OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework
 
 //AGL lib for OSX
-OPENGL_glu_LIBRARY:FILEPATH=/System/Library/Frameworks/AGL.framework
+OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AGL.framework
 
 //Dependencies for target
 OpenGLSupport_LIB_DEPENDS:STATIC=
@@ -495,9 +495,9 @@ CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding GLUT
-FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/System/Library/Frameworks/GLUT.framework][/System/Library/Frameworks/GLUT.framework/Headers][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/GLUT.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/GLUT.framework/Headers][v()]
 //Details about finding OpenGL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/System/Library/Frameworks/OpenGL.framework][/System/Library/Frameworks/OpenGL.framework][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework][v()]
 //ADVANCED property for variable: GLUT_INCLUDE_DIR
 GLUT_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLUT_glut_LIBRARY

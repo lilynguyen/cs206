@@ -16,8 +16,6 @@ subject to the following restrictions:
 Written by: Marten Svanfeldt
 */
 
-
-
 #ifndef RAGDOLLDEMO_H
 #define RAGDOLLDEMO_H
 
@@ -33,6 +31,7 @@ class btDefaultCollisionConfiguration;
 
 class RagdollDemo : public GlutDemoApplication
 {
+
 	btAlignedObjectArray<class RagDoll*> m_ragdolls;
 	//keep the collision shapes, for deletion/cleanup
 	btAlignedObjectArray<btCollisionShape*>	m_collisionShapes;
@@ -44,6 +43,9 @@ class RagdollDemo : public GlutDemoApplication
 	btRigidBody*      body[9]; // one main body, 4x2 leg segments 
 	btCollisionShape* geom[9]; 
 	bool pause;
+
+	btHingeConstraint* joints[8]; 
+ 	bool oneStep;
 
 public:
 	void initPhysics();
@@ -76,7 +78,15 @@ public:
 	void CreateCylinder(int index, double x, double y, double z, double radius, double length, char axis);
 
 	void DeleteObject(int index);
+/////
+	void CreateHinge(int index, int body1, int body2, double x, double y, double z, double ax, double ay, double az);
 
+	btVector3 PointWorldToLocal(int index, btVector3 &p);
+
+	btVector3 AxisWorldToLocal(int index, btVector3 &a);
+
+	void DestroyHinge(int index);
+	
 };
 
 

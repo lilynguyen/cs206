@@ -294,9 +294,9 @@ Demos/HelloWorld/preinstall:
 # Target rules for target Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir
 
 # All Build rule for target.
+Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/build.make Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/depend
 	$(MAKE) -f Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/build.make Demos/HelloWorld/CMakeFiles/AppHelloWorld.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppHelloWorld"
@@ -352,10 +352,10 @@ Demos/MultiThreadedDemo/preinstall:
 
 # All Build rule for target.
 Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
-Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/all
+Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
+Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 	$(MAKE) -f Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/build.make Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/depend
 	$(MAKE) -f Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/build.make Demos/MultiThreadedDemo/CMakeFiles/AppMultiThreadedDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppMultiThreadedDemo"
@@ -486,17 +486,17 @@ Demos/AllBulletDemos/preinstall:
 # Target rules for target Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir
 
 # All Build rule for target.
-Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/HACD/CMakeFiles/HACD.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/GIMPACTUtils/CMakeFiles/GIMPACTUtils.dir/all
-Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: Extras/glui/CMakeFiles/GLUI.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
+Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/build.make Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/depend
 	$(MAKE) -f Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/build.make Demos/AllBulletDemos/CMakeFiles/AppAllBulletDemos.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=1,2,3,4,5 "Built target AppAllBulletDemos"
@@ -551,14 +551,14 @@ Demos/ConvexDecompositionDemo/preinstall:
 # Target rules for target Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir
 
 # All Build rule for target.
-Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/all
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Extras/HACD/CMakeFiles/HACD.dir/all
-Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/build.make Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/depend
 	$(MAKE) -f Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/build.make Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=17 "Built target AppConvexDecompositionDemo"
@@ -614,9 +614,9 @@ Demos/CcdPhysicsDemo/preinstall:
 
 # All Build rule for target.
 Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/build.make Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/depend
 	$(MAKE) -f Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/build.make Demos/CcdPhysicsDemo/CMakeFiles/AppCcdPhysicsDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=10 "Built target AppCcdPhysicsDemo"
@@ -671,14 +671,14 @@ Demos/BulletXmlImportDemo/preinstall:
 # Target rules for target Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir
 
 # All Build rule for target.
-Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
 Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Extras/Serialize/BulletXmlWorldImporter/CMakeFiles/BulletXmlWorldImporter.dir/all
+Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
+Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
+Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/build.make Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/depend
 	$(MAKE) -f Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/build.make Demos/BulletXmlImportDemo/CMakeFiles/AppBulletXmlImportDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=9 "Built target AppBulletXmlImportDemo"
@@ -733,12 +733,12 @@ Demos/ConstraintDemo/preinstall:
 # Target rules for target Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir
 
 # All Build rule for target.
-Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
+Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/build.make Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/depend
 	$(MAKE) -f Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/build.make Demos/ConstraintDemo/CMakeFiles/AppConstraintDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppConstraintDemo"
@@ -794,9 +794,9 @@ Demos/SliderConstraintDemo/preinstall:
 
 # All Build rule for target.
 Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/build.make Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/depend
 	$(MAKE) -f Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/build.make Demos/SliderConstraintDemo/CMakeFiles/AppSliderConstraintDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=34 "Built target AppSliderConstraintDemo"
@@ -852,9 +852,9 @@ Demos/GenericJointDemo/preinstall:
 
 # All Build rule for target.
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/build.make Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/depend
 	$(MAKE) -f Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/build.make Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=21 "Built target AppGenericJointDemo"
@@ -910,9 +910,9 @@ Demos/Raytracer/preinstall:
 
 # All Build rule for target.
 Demos/Raytracer/CMakeFiles/AppRaytracer.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/Raytracer/CMakeFiles/AppRaytracer.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/Raytracer/CMakeFiles/AppRaytracer.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/Raytracer/CMakeFiles/AppRaytracer.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/Raytracer/CMakeFiles/AppRaytracer.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/Raytracer/CMakeFiles/AppRaytracer.dir/build.make Demos/Raytracer/CMakeFiles/AppRaytracer.dir/depend
 	$(MAKE) -f Demos/Raytracer/CMakeFiles/AppRaytracer.dir/build.make Demos/Raytracer/CMakeFiles/AppRaytracer.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppRaytracer"
@@ -968,9 +968,9 @@ Demos/RagdollDemo/preinstall:
 
 # All Build rule for target.
 Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/build.make Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/depend
 	$(MAKE) -f Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/build.make Demos/RagdollDemo/CMakeFiles/AppRagdollDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=30 "Built target AppRagdollDemo"
@@ -1026,9 +1026,9 @@ Demos/ForkLiftDemo/preinstall:
 
 # All Build rule for target.
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/build.make Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/depend
 	$(MAKE) -f Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/build.make Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=19 "Built target AppForkLiftDemo"
@@ -1084,9 +1084,9 @@ Demos/BasicDemo/preinstall:
 
 # All Build rule for target.
 Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/build.make Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/depend
 	$(MAKE) -f Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/build.make Demos/BasicDemo/CMakeFiles/AppBasicDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=6 "Built target AppBasicDemo"
@@ -1142,9 +1142,9 @@ Demos/FeatherstoneMultiBodyDemo/preinstall:
 
 # All Build rule for target.
 Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/build.make Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/depend
 	$(MAKE) -f Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/build.make Demos/FeatherstoneMultiBodyDemo/CMakeFiles/AppFeatherstoneMultiBodyDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppFeatherstoneMultiBodyDemo"
@@ -1200,9 +1200,9 @@ Demos/RollingFrictionDemo/preinstall:
 
 # All Build rule for target.
 Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/build.make Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/depend
 	$(MAKE) -f Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/build.make Demos/RollingFrictionDemo/CMakeFiles/AppRollingFrictionDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=32 "Built target AppRollingFrictionDemo"
@@ -1258,9 +1258,9 @@ Demos/RaytestDemo/preinstall:
 
 # All Build rule for target.
 Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/build.make Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/depend
 	$(MAKE) -f Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/build.make Demos/RaytestDemo/CMakeFiles/AppRaytestDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=31 "Built target AppRaytestDemo"
@@ -1316,9 +1316,9 @@ Demos/VoronoiFractureDemo/preinstall:
 
 # All Build rule for target.
 Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/build.make Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/depend
 	$(MAKE) -f Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/build.make Demos/VoronoiFractureDemo/CMakeFiles/AppVoronoiFractureDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=38 "Built target AppVoronoiFractureDemo"
@@ -1373,12 +1373,12 @@ Demos/GyroscopicDemo/preinstall:
 # Target rules for target Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir
 
 # All Build rule for target.
-Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
+Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/build.make Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/depend
 	$(MAKE) -f Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/build.make Demos/GyroscopicDemo/CMakeFiles/AppGyroscopicDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=22 "Built target AppGyroscopicDemo"
@@ -1434,9 +1434,9 @@ Demos/FractureDemo/preinstall:
 
 # All Build rule for target.
 Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/build.make Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/depend
 	$(MAKE) -f Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/build.make Demos/FractureDemo/CMakeFiles/AppFractureDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=20 "Built target AppFractureDemo"
@@ -1492,9 +1492,9 @@ Demos/Box2dDemo/preinstall:
 
 # All Build rule for target.
 Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/build.make Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/depend
 	$(MAKE) -f Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/build.make Demos/Box2dDemo/CMakeFiles/AppBox2dDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=7 "Built target AppBox2dDemo"
@@ -1550,9 +1550,9 @@ Demos/BspDemo/preinstall:
 
 # All Build rule for target.
 Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/build.make Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/depend
 	$(MAKE) -f Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/build.make Demos/BspDemo/CMakeFiles/AppBspPhysicsDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=8 "Built target AppBspPhysicsDemo"
@@ -1608,9 +1608,9 @@ Demos/MovingConcaveDemo/preinstall:
 
 # All Build rule for target.
 Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/build.make Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/depend
 	$(MAKE) -f Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/build.make Demos/MovingConcaveDemo/CMakeFiles/AppMovingConcaveDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppMovingConcaveDemo"
@@ -1666,9 +1666,9 @@ Demos/VehicleDemo/preinstall:
 
 # All Build rule for target.
 Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/build.make Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/depend
 	$(MAKE) -f Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/build.make Demos/VehicleDemo/CMakeFiles/AppVehicleDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppVehicleDemo"
@@ -1724,9 +1724,9 @@ Demos/UserCollisionAlgorithm/preinstall:
 
 # All Build rule for target.
 Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/build.make Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/depend
 	$(MAKE) -f Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/build.make Demos/UserCollisionAlgorithm/CMakeFiles/AppUserCollisionAlgorithm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=36 "Built target AppUserCollisionAlgorithm"
@@ -1782,9 +1782,9 @@ Demos/CharacterDemo/preinstall:
 
 # All Build rule for target.
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/build.make Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/depend
 	$(MAKE) -f Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/build.make Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=11 "Built target AppCharacterDemo"
@@ -1841,9 +1841,9 @@ Demos/SoftDemo/preinstall:
 # All Build rule for target.
 Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
+Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/build.make Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/depend
 	$(MAKE) -f Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/build.make Demos/SoftDemo/CMakeFiles/AppSoftBodyDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=35 "Built target AppSoftBodyDemo"
@@ -1899,9 +1899,9 @@ Demos/CollisionInterfaceDemo/preinstall:
 
 # All Build rule for target.
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/build.make Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/depend
 	$(MAKE) -f Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/build.make Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppCollisionInterfaceDemo"
@@ -1957,9 +1957,9 @@ Demos/ConcaveConvexcastDemo/preinstall:
 
 # All Build rule for target.
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/build.make Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/depend
 	$(MAKE) -f Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/build.make Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=13 "Built target AppConcaveConvexCastDemo"
@@ -2015,9 +2015,9 @@ Demos/SimplexDemo/preinstall:
 
 # All Build rule for target.
 Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/build.make Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/depend
 	$(MAKE) -f Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/build.make Demos/SimplexDemo/CMakeFiles/AppSimplexDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppSimplexDemo"
@@ -2073,9 +2073,9 @@ Demos/DynamicControlDemo/preinstall:
 
 # All Build rule for target.
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/build.make Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/depend
 	$(MAKE) -f Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/build.make Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=25 "Built target AppMotorDemo"
@@ -2131,9 +2131,9 @@ Demos/ConvexHullDistance/preinstall:
 
 # All Build rule for target.
 Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/build.make Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/depend
 	$(MAKE) -f Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/build.make Demos/ConvexHullDistance/CMakeFiles/AppConvexHullDistanceDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppConvexHullDistanceDemo"
@@ -2189,9 +2189,9 @@ Demos/DoublePrecisionDemo/preinstall:
 
 # All Build rule for target.
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/build.make Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/depend
 	$(MAKE) -f Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/build.make Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=18 "Built target AppDoublePrecisionDemo"
@@ -2246,12 +2246,12 @@ Demos/ConcaveDemo/preinstall:
 # Target rules for target Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir
 
 # All Build rule for target.
-Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
+Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/build.make Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/depend
 	$(MAKE) -f Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/build.make Demos/ConcaveDemo/CMakeFiles/AppConcaveDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=14 "Built target AppConcaveDemo"
@@ -2307,9 +2307,9 @@ Demos/CollisionDemo/preinstall:
 
 # All Build rule for target.
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/build.make Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/depend
 	$(MAKE) -f Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/build.make Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=12 "Built target AppCollisionDemo"
@@ -2365,9 +2365,9 @@ Demos/ContinuousConvexCollision/preinstall:
 
 # All Build rule for target.
 Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/build.make Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/depend
 	$(MAKE) -f Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/build.make Demos/ContinuousConvexCollision/CMakeFiles/AppContinuousConvexCollisionDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=16 "Built target AppContinuousConvexCollisionDemo"
@@ -2423,9 +2423,9 @@ Demos/ConcaveRaycastDemo/preinstall:
 
 # All Build rule for target.
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/build.make Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/depend
 	$(MAKE) -f Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/build.make Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=15 "Built target AppConcaveRayCastDemo"
@@ -2481,9 +2481,9 @@ Demos/GjkConvexCastDemo/preinstall:
 
 # All Build rule for target.
 Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/build.make Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/depend
 	$(MAKE) -f Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/build.make Demos/GjkConvexCastDemo/CMakeFiles/AppLinearConvexCastDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=24 "Built target AppLinearConvexCastDemo"
@@ -2539,9 +2539,9 @@ Demos/MultiMaterialDemo/preinstall:
 
 # All Build rule for target.
 Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/build.make Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/depend
 	$(MAKE) -f Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/build.make Demos/MultiMaterialDemo/CMakeFiles/AppMultiMaterialDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=26 "Built target AppMultiMaterialDemo"
@@ -2596,13 +2596,13 @@ Demos/SerializeDemo/preinstall:
 # Target rules for target Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir
 
 # All Build rule for target.
-Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
-Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
 Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: Extras/Serialize/BulletFileLoader/CMakeFiles/BulletFileLoader.dir/all
+Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: Extras/Serialize/BulletWorldImporter/CMakeFiles/BulletWorldImporter.dir/all
+Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
+Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/build.make Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/depend
 	$(MAKE) -f Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/build.make Demos/SerializeDemo/CMakeFiles/AppSerializeDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=33 "Built target AppSerializeDemo"
@@ -2658,9 +2658,9 @@ Demos/InternalEdgeDemo/preinstall:
 
 # All Build rule for target.
 Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/build.make Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/depend
 	$(MAKE) -f Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/build.make Demos/InternalEdgeDemo/CMakeFiles/AppInternalEdgeDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=23 "Built target AppInternalEdgeDemo"
@@ -2716,9 +2716,9 @@ Demos/Benchmarks/preinstall:
 
 # All Build rule for target.
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
+Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
-Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/build.make Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/depend
 	$(MAKE) -f Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/build.make Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppBenchmarks"
@@ -2773,10 +2773,10 @@ Demos/ThreadingDemo/preinstall:
 # Target rules for target Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir
 
 # All Build rule for target.
-Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
-Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/all
+Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
+Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 	$(MAKE) -f Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/build.make Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/depend
 	$(MAKE) -f Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/build.make Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num= "Built target AppThreadingDemo"
@@ -2854,12 +2854,12 @@ Demos/OpenCLClothDemo/MiniCL/preinstall:
 # All Build rule for target.
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
-Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
-Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/MiniCL/CMakeFiles/MiniCL.dir/all
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/all
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/CMakeFiles/BulletSoftBodySolvers_OpenCL_Mini.dir/all
+Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
+Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 	$(MAKE) -f Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/build.make Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/depend
 	$(MAKE) -f Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/build.make Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=29 "Built target AppOpenCLClothDemo_Mini"
@@ -2914,13 +2914,13 @@ Demos/OpenCLClothDemo/Apple/preinstall:
 # Target rules for target Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir
 
 # All Build rule for target.
-Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/all
 Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: Demos/OpenGL/CMakeFiles/OpenGLSupport.dir/all
 Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
-Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
-Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/LinearMath/CMakeFiles/LinearMath.dir/all
 Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/all
+Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletCollision/CMakeFiles/BulletCollision.dir/all
+Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
+Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/all: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/all
 	$(MAKE) -f Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/build.make Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/depend
 	$(MAKE) -f Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/build.make Demos/OpenCLClothDemo/Apple/CMakeFiles/AppOpenCLClothDemo_Apple.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/CMakeFiles" --progress-num=27,28 "Built target AppOpenCLClothDemo_Apple"
