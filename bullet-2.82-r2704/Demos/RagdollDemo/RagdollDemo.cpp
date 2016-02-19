@@ -384,23 +384,23 @@ void RagdollDemo::initPhysics()
 	pause = false; //where the fuck do u init this
 	oneStep = false;
 
-	CreateBox(0, 0., .80, 0., 1., 0.2, 1); // Create the box 
+	CreateBox(0, 0., 1, 0., 1., 0.2, 1); // Create the box 
 
-	CreateCylinder(1, 1.8, .85, 0, .15, 1.1, 'x'); // Create the leg
-	CreateCylinder(2, -1.8, .85, 0, .15, 1.1, 'x');
+	CreateCylinder(1, 1.9, 1, 0, .15, 1.1, 'x'); // Create the leg
+	CreateCylinder(2, -1.9, 1, 0, .15, 1.1, 'x');
 
-	CreateCylinder(3, 0, .85, 1.8, .15, 1.1, 'z');
-	CreateCylinder(4, 0, .85, -1.8, .15, 1.1, 'z');
+	CreateCylinder(3, 0, 1, 1.9, .15, 1.1, 'z');
+	CreateCylinder(4, 0, 1, -1.9, .15, 1.1, 'z');
 
-	CreateCylinder(5, 3, 0, 0, .15, .85, 'y');
-	CreateCylinder(6, -3, 0, 0, .15, .85, 'y');
-	CreateCylinder(7, 0, 0, 3, .15, .85, 'y');
-	CreateCylinder(8, 0, 0, -3, .15, .85, 'y');
+	CreateCylinder(5, 3, 0, 0, .15, 1, 'y');
+	CreateCylinder(6, -3, 0, 0, .15, 1, 'y');
+	CreateCylinder(7, 0, 0, 3, .15, 1, 'y');
+	CreateCylinder(8, 0, 0, -3, .15, 1, 'y');
 
-	CreateHinge(0, 1, 5, 1.5, 1.0, 0.0, 0, 0, .85);
-	CreateHinge(0, 2, 6, 1.5, 1.0, 0.0, 0, 0, .85);
-	CreateHinge(0, 3, 7, 1.5, 1.0, 0.0, 0, 0, .85);
-	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, .85);
+	CreateHinge(0, 1, 5, 1.5, 1.0, 0.0, 0, 0, 1);
+	CreateHinge(0, 2, 6, 1.5, 1.0, 0.0, 0, 0, 1);
+	CreateHinge(0, 3, 7, 1.5, 1.0, 0.0, 0, 0, 1);
+	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1);
 
 
 	clientResetScene();		
