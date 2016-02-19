@@ -28,6 +28,8 @@ Written by: Marten Svanfeldt
 #include "GLDebugDrawer.h"
 #include "RagdollDemo.h"
 
+#include <iostream>
+
 
 // Enrico: Shouldn't these three variables be real constants and not defines?
 
@@ -116,7 +118,7 @@ public:
 		// Setup the geometry
 		m_shapes[BODYPART_PELVIS] = new btCapsuleShape(btScalar(0.15), btScalar(0.20));
 		m_shapes[BODYPART_SPINE] = new btCapsuleShape(btScalar(0.15), btScalar(0.28));
-		m_shapes[BODYPART_HEAD] = new btCapsuleShape(btScalar(0.10), btScalar(0.05));
+		m_shapes[BODYPART_HEAD] = new btCapsuleShape(btScalar(0.40), btScalar(0.20));
 		m_shapes[BODYPART_LEFT_UPPER_LEG] = new btCapsuleShape(btScalar(0.07), btScalar(0.45));
 		m_shapes[BODYPART_LEFT_LOWER_LEG] = new btCapsuleShape(btScalar(0.05), btScalar(0.37));
 		m_shapes[BODYPART_RIGHT_UPPER_LEG] = new btCapsuleShape(btScalar(0.07), btScalar(0.45));
@@ -326,9 +328,6 @@ public:
 	}
 };
 
-
-
-
 void RagdollDemo::initPhysics()
 {
 	// Setup the basic world
@@ -347,7 +346,7 @@ void RagdollDemo::initPhysics()
 	m_broadphase = new btAxisSweep3 (worldAabbMin, worldAabbMax);
 
 	m_solver = new btSequentialImpulseConstraintSolver;
-
+// 
 	m_dynamicsWorld = new btDiscreteDynamicsWorld(m_dispatcher,m_broadphase,m_solver,m_collisionConfiguration);
 	//m_dynamicsWorld->getDispatchInfo().m_useConvexConservativeDistanceUtil = true;
 	//m_dynamicsWorld->getDispatchInfo().m_convexConservativeDistanceThreshold = 0.01f;
@@ -374,25 +373,35 @@ void RagdollDemo::initPhysics()
 
 	}
 
-	// Spawn ragdoll
+	// Spawn one ragdoll
 	// btVector3 startOffset(1,0.5,0);
 	// spawnRagdoll(startOffset);
+
+	// Spawn second ragdoll
 	// startOffset.setValue(-1,0.5,0);
 	// spawnRagdoll(startOffset);
 
-	CreateBox(0, 0., 1.60, 0., 1., 1., 0.2); // Create the box 
-	CreateCylinder(1, 1.5, 1.60, 0, .75, .15, 'x'); // Create the leg
-	CreateCylinder(2, -1.5, 1.60, 0, .75, .15, 'x');
+	pause = false; //where the fuck do u init this
+	oneStep = false;
 
-	CreateCylinder(3, 0, 1.60, 1.5, .75, .15, 'z');
-	CreateCylinder(4, 0, 1.60, -1.5, .75, .15, 'z');
+	CreateBox(0, 0., .80, 0., 1., 0.2, 1); // Create the box 
 
-	CreateCylinder(5, 2.25, .75, 0, .15, .85, 'y');
-	CreateCylinder(6, -2.25, .75, 0, .15, .85, 'y');
-	CreateCylinder(7, 0, .75, 2.25, .15, .85, 'y');
-	CreateCylinder(8, 0, .75, -2.25, .15, .85, 'y');
+	CreateCylinder(1, 1.8, .85, 0, .15, 1.1, 'x'); // Create the leg
+	CreateCylinder(2, -1.8, .85, 0, .15, 1.1, 'x');
 
-	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1);
+	CreateCylinder(3, 0, .85, 1.8, .15, 1.1, 'z');
+	CreateCylinder(4, 0, .85, -1.8, .15, 1.1, 'z');
+
+	CreateCylinder(5, 3, 0, 0, .15, .85, 'y');
+	CreateCylinder(6, -3, 0, 0, .15, .85, 'y');
+	CreateCylinder(7, 0, 0, 3, .15, .85, 'y');
+	CreateCylinder(8, 0, 0, -3, .15, .85, 'y');
+
+	CreateHinge(0, 1, 5, 1.5, 1.0, 0.0, 0, 0, .85);
+	CreateHinge(0, 2, 6, 1.5, 1.0, 0.0, 0, 0, .85);
+	CreateHinge(0, 3, 7, 1.5, 1.0, 0.0, 0, 0, .85);
+	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, .85);
+
 
 	clientResetScene();		
 }
@@ -401,31 +410,49 @@ void RagdollDemo::initPhysics()
 
 void RagdollDemo::CreateBox(int index, double x, double y, double z, double length, double width, double height) { 
 
-	btDefaultMotionState* motionState = new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1), btVector3(x,y,z)));
-	geom[index] = new btBoxShape(btVector3(btScalar(length),btScalar(height),btScalar(width)));
-	btRigidBody::btRigidBodyConstructionInfo rbInfo(1, motionState, geom[index], btVector3(0,0,0));
-	body[index] = new btRigidBody(rbInfo);
-	m_dynamicsWorld->addRigidBody(body[index]);
+	// btDefaultMotionState* motionState = new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1), btVector3(x,y,z)));
+	// geom[index] = new btBoxShape(btVector3(btScalar(length),btScalar(height),btScalar(width)));
+	// btRigidBody::btRigidBodyConstructionInfo rbInfo(1, motionState, geom[index], btVector3(0,0,0));
+	// body[index] = new btRigidBody(rbInfo);
+	// m_dynamicsWorld->addRigidBody(body[index]);
 
+	geom[index] = new btBoxShape(btVector3(length,width,height));
+
+	btTransform offset; 
+	offset.setIdentity();
+	offset.setOrigin(btVector3(btScalar(x),btScalar(y),btScalar(z)));
+
+	btTransform transform;
+	transform.setIdentity();
+	transform.setOrigin(btVector3(btScalar(0.), btScalar(1.), btScalar(0.)));
+
+	body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
+
+	m_dynamicsWorld->addRigidBody(body[index]);
 }
 
 void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double radius, double length, char axis) {
 
-	btDefaultMotionState* motionState = new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1), btVector3(x,y,z)));
-	
 	if (axis == 'x') {
-		geom[index] = new btCylinderShapeX(btVector3(btScalar(radius),btScalar(length),btScalar(0)));
+		geom[index] = new btCylinderShapeX(btVector3(btScalar(length),btScalar(radius),btScalar(0)));
 	}
 	else if (axis == 'y') {
 		geom[index] = new btCylinderShape(btVector3(btScalar(radius),btScalar(length),btScalar(0)));
 	}
 	else if (axis == 'z') {
-		geom[index] = new btCylinderShapeZ(btVector3(btScalar(length),btScalar(0),btScalar(radius)));
+		geom[index] = new btCylinderShapeZ(btVector3(btScalar(radius),btScalar(0),btScalar(length)));
 	}
-	
 
-	btRigidBody::btRigidBodyConstructionInfo rbInfo(1, motionState, geom[index], btVector3(0,0,0));
-	body[index] = new btRigidBody(rbInfo);
+	btTransform offset; 
+	offset.setIdentity();
+	offset.setOrigin(btVector3(btScalar(x),btScalar(y),btScalar(z)));
+
+	btTransform transform;
+	transform.setIdentity();
+	transform.setOrigin(btVector3(btScalar(0.), btScalar(1.), btScalar(0.)));
+	
+	body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
+
 	m_dynamicsWorld->addRigidBody(body[index]);
 
 }
@@ -446,6 +473,8 @@ void RagdollDemo::CreateHinge(int index, int body1, int body2, double x, double 
 	joints[index] = new btHingeConstraint(*body[body1], *body[body2],
 	                                               p1, p2,
 	                                               a1, a2, false); 
+	// Add to simulation
+	m_dynamicsWorld->addConstraint(joints[index], true);
 }
 
 btVector3 RagdollDemo::PointWorldToLocal(int index, btVector3 &p) {
@@ -487,8 +516,9 @@ void RagdollDemo::clientMoveAndDisplay()
 	{
 		// m_dynamicsWorld->stepSimulation(ms / 1000000.f);
 
-		if (!pause) { 
-    		m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+		if (!pause || (pause && oneStep)) { 
+		    m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+		    oneStep = false;
 		}
 		
 		//optional but useful: debug drawing
@@ -528,6 +558,16 @@ void RagdollDemo::keyboardCallback(unsigned char key, int x, int y)
 		spawnRagdoll(startOffset);
 		break;
 		}
+	case 'p':
+		{
+		pause = !pause;
+		break;
+		}
+	case 'o':
+		{
+		oneStep = !oneStep;
+		break;
+		}
 	default:
 		DemoApplication::keyboardCallback(key, x, y);
 	}
@@ -539,7 +579,6 @@ void RagdollDemo::keyboardCallback(unsigned char key, int x, int y)
 
 void	RagdollDemo::exitPhysics()
 {
-
 	DeleteObject(0);
 
 	DestroyHinge(0);
@@ -591,8 +630,3 @@ void	RagdollDemo::exitPhysics()
 
 	
 }
-
-
-
-
-
