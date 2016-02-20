@@ -384,23 +384,23 @@ void RagdollDemo::initPhysics()
 	pause = false; //where the fuck do u init this
 	oneStep = false;
 
-	CreateBox(0, 0., 1, 0., 1., 0.2, 1); // Create the box 
+	CreateBox(0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.2); // Create the box 
 
-	CreateCylinder(1, 1.9, 1, 0, .15, 1.1, 'x'); // Create the leg
-	CreateCylinder(2, -1.9, 1, 0, .15, 1.1, 'x');
+	CreateCylinder(1,  2.0, 1.0,  0.0, 	0.2, 1.0, 'x'); // Create the leg
+	CreateCylinder(2, -2.0, 1.0,  0.0, 	0.2, 1.0, 'x');
 
-	CreateCylinder(3, 0, 1, 1.9, .15, 1.1, 'z');
-	CreateCylinder(4, 0, 1, -1.9, .15, 1.1, 'z');
+	CreateCylinder(3,  0.0, 1.0,  2.0, 	0.2, 1.0, 'z');
+	CreateCylinder(4,  0.0, 1.0, -2.0, 	0.2, 1.0, 'z');
 
-	CreateCylinder(5, 3, 0, 0, .15, 1, 'y');
-	CreateCylinder(6, -3, 0, 0, .15, 1, 'y');
-	CreateCylinder(7, 0, 0, 3, .15, 1, 'y');
-	CreateCylinder(8, 0, 0, -3, .15, 1, 'y');
+	CreateCylinder(5,  3, 0,  0, 	0.2, 1, 'y');
+	CreateCylinder(6, -3, 0,  0, 	0.2, 1, 'y');
+	CreateCylinder(7,  0, 0,  3, 	0.2, 1, 'y');
+	CreateCylinder(8,  0, 0, -3, 	0.2, 1, 'y');
 
-	CreateHinge(0, 1, 5, 1.5, 1.0, 0.0, 0, 0, 1);
-	CreateHinge(0, 2, 6, 1.5, 1.0, 0.0, 0, 0, 1);
-	CreateHinge(0, 3, 7, 1.5, 1.0, 0.0, 0, 0, 1);
-	CreateHinge(0, 4, 8, 1.5, 1.0, 0.0, 0, 0, 1);
+	CreateHinge(0, 1, 5, 	 3, 2,  0, 	0, 0, 1);
+	CreateHinge(1, 2, 6, 	-3, 2,  0, 	0, 0, 1);
+	CreateHinge(2, 3, 7, 	 0, 2,  3,	1, 0, 0);
+	CreateHinge(3, 4, 8, 	 0, 2, -3,	1, 0, 0);
 
 
 	clientResetScene();		
@@ -410,13 +410,7 @@ void RagdollDemo::initPhysics()
 
 void RagdollDemo::CreateBox(int index, double x, double y, double z, double length, double width, double height) { 
 
-	// btDefaultMotionState* motionState = new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1), btVector3(x,y,z)));
-	// geom[index] = new btBoxShape(btVector3(btScalar(length),btScalar(height),btScalar(width)));
-	// btRigidBody::btRigidBodyConstructionInfo rbInfo(1, motionState, geom[index], btVector3(0,0,0));
-	// body[index] = new btRigidBody(rbInfo);
-	// m_dynamicsWorld->addRigidBody(body[index]);
-
-	geom[index] = new btBoxShape(btVector3(length,width,height));
+	geom[index] = new btBoxShape(btVector3(length,height,width));
 
 	btTransform offset; 
 	offset.setIdentity();
