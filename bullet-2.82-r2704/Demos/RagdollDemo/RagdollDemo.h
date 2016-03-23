@@ -1,29 +1,10 @@
-/*
-Bullet Continuous Collision Detection and Physics Library
-RagdollDemo
-Copyright (c) 2007 Starbreeze Studios
-
-This software is provided 'as-is', without any express or implied warranty.
-In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
-subject to the following restrictions:
-
-1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
-2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
-3. This notice may not be removed or altered from any source distribution.
-
-Written by: Marten Svanfeldt
-*/
-
 #ifndef RAGDOLLDEMO_H
 #define RAGDOLLDEMO_H
 
 #include "GlutDemoApplication.h"
 #include "LinearMath/btAlignedObjectArray.h"
 #include "BulletDynamics/ConstraintSolver/btHingeConstraint.h"
-
-#include "GLDebugDrawer.h" 
+#include "GLDebugDrawer.h"
 
 class btBroadphaseInterface;
 class btCollisionShape;
@@ -53,11 +34,20 @@ class RagdollDemo : public GlutDemoApplication
 
  	int IDs[10];
 
-public: 
+public:
 	int touches[10];
 	btVector3 touchPoints[10];
 
-public:
+	virtual void renderme() { 
+		extern GLDebugDrawer gDebugDrawer; 
+		GlutDemoApplication::renderme(); 
+		for (int i = 0; i < 10; i++) {
+			if (touches[i]) {
+				gDebugDrawer.drawSphere(touchPoints[i], 0.2, btVector3(1., 0., 0.));
+			}
+		}
+ 	}
+
 	void initPhysics();
 
 	void exitPhysics();
@@ -102,22 +92,8 @@ public:
 	void ActuateJoint2(int jointIndex, double desiredAngle, double jointOffset, double timeState);
 
 	float randomAngle();
-//////
-	// virtual void renderme();
 
-	virtual void renderme() { 
-		extern GLDebugDrawer gDebugDrawer; 
-			// Call the parent method.
-			GlutDemoApplication::renderme(); 
-			// Make a circle with a 0.9 radius at (0,0,0) 
-			// with RGB color (1,0,0).
-			// gDebugDrawer.drawSphere(btVector3(0.,0.,0.), 0.9, btVector3(1., 0., 0.));
-			for(int i = 0; i < 10; i++) {
-				if (touches[i] == 1) {
-					gDebugDrawer.drawSphere(touchPoints[i], 0.2, btVector3(1., 0., 0.));
-				}
-			}
-	}
+/////
 };
 
 

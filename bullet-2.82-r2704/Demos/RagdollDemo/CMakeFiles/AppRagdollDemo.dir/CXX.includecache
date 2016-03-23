@@ -6,34 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/RagdollDemo.cpp
-GLDebugDrawer.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GLDebugDrawer.h
-btBulletDynamicsCommon.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/btBulletDynamicsCommon.h
-GlutStuff.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GlutStuff.h
-GL_ShapeDrawer.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GL_ShapeDrawer.h
-LinearMath/btIDebugDraw.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/LinearMath/btIDebugDraw.h
-GLDebugDrawer.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GLDebugDrawer.h
-RagdollDemo.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/RagdollDemo.h
-iostream
--
-
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/RagdollDemo.h
-GlutDemoApplication.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GlutDemoApplication.h
-LinearMath/btAlignedObjectArray.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/LinearMath/btAlignedObjectArray.h
-BulletDynamics/ConstraintSolver/btHingeConstraint.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/BulletDynamics/ConstraintSolver/btHingeConstraint.h
-GLDebugDrawer.h
-/Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/GLDebugDrawer.h
-
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/main.cpp
 RagdollDemo.h
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/RagdollDemo.h
@@ -44,43 +16,9 @@ GLDebugDrawer.h
 btBulletDynamicsCommon.h
 /Users/lilynguyen/Documents/UVM 2015-16/CS 206/bullet-2.82-r2704/Demos/RagdollDemo/btBulletDynamicsCommon.h
 
-Demos/OpenGL/DemoApplication.h
-GlutStuff.h
-Demos/OpenGL/GlutStuff.h
-GL_ShapeDrawer.h
-Demos/OpenGL/GL_ShapeDrawer.h
-stdlib.h
--
-stdio.h
--
-math.h
--
-LinearMath/btVector3.h
-Demos/OpenGL/LinearMath/btVector3.h
-LinearMath/btMatrix3x3.h
-Demos/OpenGL/LinearMath/btMatrix3x3.h
-LinearMath/btTransform.h
-Demos/OpenGL/LinearMath/btTransform.h
-LinearMath/btQuickprof.h
-Demos/OpenGL/LinearMath/btQuickprof.h
-LinearMath/btAlignedObjectArray.h
-Demos/OpenGL/LinearMath/btAlignedObjectArray.h
-
 Demos/OpenGL/GLDebugDrawer.h
 LinearMath/btIDebugDraw.h
 Demos/OpenGL/LinearMath/btIDebugDraw.h
-
-Demos/OpenGL/GL_ShapeDrawer.h
-LinearMath/btAlignedObjectArray.h
-Demos/OpenGL/LinearMath/btAlignedObjectArray.h
-LinearMath/btVector3.h
-Demos/OpenGL/LinearMath/btVector3.h
-BulletCollision/CollisionShapes/btShapeHull.h
-Demos/OpenGL/BulletCollision/CollisionShapes/btShapeHull.h
-
-Demos/OpenGL/GlutDemoApplication.h
-DemoApplication.h
-Demos/OpenGL/DemoApplication.h
 
 Demos/OpenGL/GlutStuff.h
 windows.h
@@ -431,12 +369,6 @@ src/BulletCollision/CollisionShapes/btConvexInternalShape.h
 src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
 BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
 src/BulletCollision/CollisionShapes/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
-
-src/BulletCollision/CollisionShapes/btShapeHull.h
-LinearMath/btAlignedObjectArray.h
-src/BulletCollision/CollisionShapes/LinearMath/btAlignedObjectArray.h
-BulletCollision/CollisionShapes/btConvexShape.h
-src/BulletCollision/CollisionShapes/BulletCollision/CollisionShapes/btConvexShape.h
 
 src/BulletCollision/CollisionShapes/btSphereShape.h
 btConvexInternalShape.h

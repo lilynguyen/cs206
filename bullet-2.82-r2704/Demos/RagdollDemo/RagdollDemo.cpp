@@ -1,24 +1,5 @@
-/*
-Bullet Continuous Collision Detection and Physics Library
-Ragdoll Demo
-Copyright (c) 2007 Starbreeze Studios
-
-This software is provided 'as-is', without any express or implied warranty.
-In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
-subject to the following restrictions:
-
-1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
-2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
-3. This notice may not be removed or altered from any source distribution.
-
-Written by: Marten Svanfeldt
-*/
-
 #define CONSTRAINT_DEBUG_SIZE 0.2f
 
-#include "GLDebugDrawer.h"
 
 #include "btBulletDynamicsCommon.h"
 #include "GlutStuff.h"
@@ -30,9 +11,6 @@ Written by: Marten Svanfeldt
 #include "RagdollDemo.h"
 
 #include <iostream>
-
-
-// Enrico: Shouldn't these three variables be real constants and not defines?
 
 #ifndef M_PI
 #define M_PI       3.14159265358979323846
@@ -76,13 +54,10 @@ public:
 	}
 };
 
-//////
-
 static RagdollDemo* ragdollDemo;
 
 bool myContactProcessedCallback(btManifoldPoint& cp, void* body0, void* body1) {
-
-    int *ID1, *ID2; 
+    int *ID1, *ID2;
     btCollisionObject* o1 = static_cast<btCollisionObject*>(body0); 
     btCollisionObject* o2 = static_cast<btCollisionObject*>(body1);
     int groundID = 9;
@@ -94,24 +69,28 @@ bool myContactProcessedCallback(btManifoldPoint& cp, void* body0, void* body1) {
 
     ragdollDemo->touches[*ID1] = 1;
     ragdollDemo->touches[*ID2] = 1;
-    ragdollDemo->touchPoints[*ID1] = cp.m_positionWorldOnB;
+
+    ragdollDemo->touchPoints[*ID1] = cp.m_positionWorldOnB; 
     ragdollDemo->touchPoints[*ID2] = cp.m_positionWorldOnB;
 
     return false;
 }
 
-//////
-
 void RagdollDemo::initPhysics()
 {
-
 	ragdollDemo = this;
+
+	oneStep = false;
+
+	for (int i=0; i<10; i++) {
+		IDs[i] = i;
+	}
 
 	gContactProcessedCallback = myContactProcessedCallback;
 
+	// Setup the basic world
 	setTexturing(true);
 	setShadows(true);
-
 	setCameraDistance(btScalar(5.));
 
 	m_collisionConfiguration = new btDefaultCollisionConfiguration();
@@ -141,27 +120,13 @@ void RagdollDemo::initPhysics()
 		btCollisionObject* fixedGround = new btCollisionObject();
 		fixedGround->setCollisionShape(groundShape);
 		fixedGround->setWorldTransform(groundTransform);
+		fixedGround->setUserPointer(&(IDs[9]));
 		m_dynamicsWorld->addCollisionObject(fixedGround);
-		fixedGround->setUserPointer(&IDs[9]);
 #else
 		localCreateRigidBody(btScalar(0.),groundTransform,groundShape);
 #endif //CREATE_GROUND_COLLISION_OBJECT
 
 	}
-
-	pause = false; //where the fuck do u init this
-	oneStep = false;
-
-	IDs[9] = 9;
-
-
-	for (int i=0; i<10; i++) {
-		IDs[i] = i;
-	}
-
-	// for (int i=0; i<=10; i++) {
-	// 	touches[i] = 0;
-	// }
 
 	CreateBox(0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.2); // Create the box 
 
@@ -206,9 +171,9 @@ void RagdollDemo::CreateBox(int index, double x, double y, double z, double leng
 
 	body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
 
-	m_dynamicsWorld->addRigidBody(body[index]);
-
 	body[index]->setUserPointer(&(IDs[index]));
+
+	m_dynamicsWorld->addRigidBody(body[index]);
 }
 
 void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double radius, double length, char axis) {
@@ -233,9 +198,10 @@ void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double
 	
 	body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
 
+	body[index]->setUserPointer(&(IDs[index]));
+
 	m_dynamicsWorld->addRigidBody(body[index]);
 
-	body[index]->setUserPointer(&(IDs[index]));
 }
 
 void RagdollDemo::DeleteObject(int index) {
@@ -308,20 +274,6 @@ float RagdollDemo::randomAngle()
 
 /////////////////
 
-// void RagdollDemo::renderme() { 
-// 	extern GLDebugDrawer gDebugDrawer; 
-// 	// Call the parent method.
-// 		GlutDemoApplication::renderme(); 
-// 	// Make a circle with a 0.9 radius at (0,0,0) 
-// 	// with RGB color (1,0,0).
-// 		gDebugDrawer.drawSphere(btVector3(0.,0.,0.), 0.9, btVector3(1., 0., 0.));
-// 		// for (int i = 0; i < 10; i++) {
-// 		// 	gDebugDrawer.drawSphere(touchPoints[i], 0.2, btVector3(1.0, 0.0, 0.0));
-// 		// }
-//  }
-
-/////////////////
-
 void RagdollDemo::spawnRagdoll(const btVector3& startOffset)
 {
 	RagDoll* ragDoll = new RagDoll (m_dynamicsWorld, startOffset);
@@ -330,26 +282,23 @@ void RagdollDemo::spawnRagdoll(const btVector3& startOffset)
 
 void RagdollDemo::clientMoveAndDisplay()
 {
-
-	for (int i=0; i<=10; i++) {
-		touches[i] = 0;
-	}
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
 
 	//simple dynamics world doesn't handle fixed-time-stepping
 	float ms = getDeltaTimeMicroseconds();
 
-	// float minFPS = 1000000.f/60.f; // need to increase timeStep
 	float minFPS = 100000.f/60.f;
+
 	if (ms > minFPS)
 		ms = minFPS;
 
 	if (m_dynamicsWorld)
 	{
-		// m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+		if (oneStep) {
+			pause = false;
+		}
 
-		if (!pause || (pause && oneStep)) { 
+		if (!pause) {
 
 			ActuateJoint(0, randomAngle(), -90.0, ms/1000000.0f);
 			ActuateJoint(1, randomAngle(), -90.0, ms/1000000.0f);
@@ -360,20 +309,26 @@ void RagdollDemo::clientMoveAndDisplay()
 			ActuateJoint(6, randomAngle(), -90.0, ms/1000000.0f);
 			ActuateJoint(7, randomAngle(), -90.0, ms/1000000.0f);
 
-		    // m_dynamicsWorld->stepSimulation(ms / 1000000.0f); // need to increase timeStep
-			m_dynamicsWorld->stepSimulation(ms / 100000.0f);
+			for (int i = 0; i < 10; i++) {
+				touches[i] = 0;
+			}
 
-		    oneStep = false;
+		    m_dynamicsWorld->stepSimulation(ms / 100000.0f);
 
-		    // for (int i=1;i<10;i++) {
-		    // 	printf("%d", touches[i]);
-		    // }
-			printf("%d%d%d%d%d%d%d%d%d\n",touches[0],touches[1],touches[2],touches[3],touches[4],touches[5],touches[6],touches[7],touches[8]); // omit fixedGround @ 9 (always 1)
+		    for (int i = 0; i < 10; i++) {
+              printf("%d", touches[i]);
+            }
+            std::cout << "\n";
+
 		}
+		
+        if (oneStep) {
+          oneStep = false;
+          pause = true;
+        }
 		
 		//optional but useful: debug drawing
 		m_dynamicsWorld->debugDrawWorld();
-
 
 	}
 
@@ -421,7 +376,11 @@ void RagdollDemo::keyboardCallback(unsigned char key, int x, int y)
 	default:
 		DemoApplication::keyboardCallback(key, x, y);
 	}
+
+	
 }
+
+
 
 void	RagdollDemo::exitPhysics()
 {
@@ -490,4 +449,6 @@ void	RagdollDemo::exitPhysics()
 	delete m_dispatcher;
 
 	delete m_collisionConfiguration;
+
+	
 }
