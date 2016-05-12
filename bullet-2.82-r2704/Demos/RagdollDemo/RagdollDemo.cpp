@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 #include <iomanip>
 
@@ -81,6 +82,7 @@ bool myContactProcessedCallback(btManifoldPoint& cp, void* body0, void* body1) {
 
 void RagdollDemo::initPhysics()
 {
+
 	ragdollDemo = this;
 
 	oneStep = false;
@@ -90,9 +92,19 @@ void RagdollDemo::initPhysics()
 		IDs[i] = i;
 	}
 
+	for (int i = 0; i < 41; i++) {
+		stairIDs[i] = i;
+	}
+	
+	using namespace std;
+	ifstream inf("weights.dat");
+
 	for (int i = 0; i < 4; i ++) {
 		for (int j = 0; j < 8; j++) {
-			weights[i][j] = ((rand() / (double)RAND_MAX) * 2 - 1);
+			double w;
+			// weights[i][j] = ((rand() / (double)RAND_MAX) * 2 - 1);
+			inf >> w;
+			weights[i][j] = w;
 		}	
 	}
 
@@ -138,7 +150,7 @@ void RagdollDemo::initPhysics()
 
 	}
 
-	CreateBox(0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.2, 1); // Create the box 
+	CreateBox(0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.2); // Create the box 
 
 	CreateCylinder(1,  2.0, 1.0,  0.0, 	0.2, 1.0, 'x'); // Create the leg
 	CreateCylinder(2, -2.0, 1.0,  0.0, 	0.2, 1.0, 'x');
@@ -162,7 +174,8 @@ void RagdollDemo::initPhysics()
 	CreateHinge(7, 0, 4, 	 0, 2, -1,	1, 0, 0);
 
 	for (int i = 0; i < 40; i++) {
-		CreateBox(0, 8.0+(i*2), -0.9+(i*0.3), 0.0, 1.0+(i), 5.0, 0.3, 2);
+		// CreateStair(0, 8.0+(i*2), -0.9+(i*0.3), 0.0, 1.0+(i), 5.0, 0.3);
+		CreateStair(0, 0.0, -0.9+(i*0.3), 8.0+(i*2), 30, 5.0, 0.3);
 	}
 
 	clientResetScene();		
@@ -170,7 +183,7 @@ void RagdollDemo::initPhysics()
 
 /////////////////
 
-void RagdollDemo::CreateBox(int index, double x, double y, double z, double length, double width, double height, int type) { 
+void RagdollDemo::CreateBox(int index, double x, double y, double z, double length, double width, double height) { 
 
 	geom[index] = new btBoxShape(btVector3(length,height,width));
 
@@ -182,16 +195,33 @@ void RagdollDemo::CreateBox(int index, double x, double y, double z, double leng
 	transform.setIdentity();
 	transform.setOrigin(btVector3(btScalar(0.), btScalar(1.), btScalar(0.)));
 
-	if (type == 1) {
-		body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
-	} else if (type == 2) {
-		body[index] = localCreateRigidBody(btScalar(0), offset*transform, geom[index]);
-	}
+	body[index] = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
 
 	body[index]->setUserPointer(&(IDs[index]));
 
 	m_dynamicsWorld->addRigidBody(body[index]);
 }
+
+//
+void RagdollDemo::CreateStair(int index, double x, double y, double z, double length, double width, double height) { 
+
+	stairGeom[index] = new btBoxShape(btVector3(length,height,width));
+
+	btTransform offset; 
+	offset.setIdentity();
+	offset.setOrigin(btVector3(btScalar(x),btScalar(y),btScalar(z)));
+
+	btTransform transform;
+	transform.setIdentity();
+	transform.setOrigin(btVector3(btScalar(0.), btScalar(1.), btScalar(0.)));
+
+	stairBody[index] = localCreateRigidBody(btScalar(0), offset*transform, stairGeom[index]);
+
+	stairBody[index]->setUserPointer(&(stairIDs[index]));
+
+	m_dynamicsWorld->addRigidBody(stairBody[index]);
+}
+//
 
 void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double radius, double length, char axis) {
 
@@ -223,6 +253,7 @@ void RagdollDemo::CreateCylinder(int index, double x, double y, double z, double
 
 void RagdollDemo::DeleteObject(int index) {
 	m_dynamicsWorld->removeRigidBody(body[index]);
+	m_dynamicsWorld->removeRigidBody(stairBody[index]);
 }
 
 /////////////////
@@ -311,28 +342,6 @@ void RagdollDemo::Save_Position(btRigidBody* body) {
 
 /////////////////
 
-// void RagdollDemo::CreateStair(int index, double x, double y, double z, double length, double width, double height) { 
-
-	// stairGeom[index] = new btBoxShape(btVector3(length,height,width));
-
-	// btTransform offset; 
-	// offset.setIdentity();
-	// offset.setOrigin(btVector3(btScalar(x),btScalar(y),btScalar(z)));
-
-	// btTransform transform;
-	// transform.setIdentity();
-	// transform.setOrigin(btVector3(btScalar(0.), btScalar(1.), btScalar(0.)));
-
-	// stairBody[index] = localCreateRigidBody(btScalar(1.), offset*transform, stairGeom[index]);
-
-	// stairBody[index]->setUserPointer(&(stairIDs[index]));
-
-	// m_dynamicsWorld->addRigidBody(stairBody[index]);
-
-// }
-
-/////////////////
-
 void RagdollDemo::spawnRagdoll(const btVector3& startOffset)
 {
 	RagDoll* ragDoll = new RagDoll (m_dynamicsWorld, startOffset);
@@ -378,7 +387,7 @@ void RagdollDemo::clientMoveAndDisplay()
 					motorCommand = tanh(motorCommand);
 
 					// Expand range angles to [-45, 45]
-					motorCommand *= 45;
+					motorCommand *= 90;
 
 					ActuateJoint(i, motorCommand, -90.0, ms/1000000.0f);
 				}
@@ -400,10 +409,10 @@ void RagdollDemo::clientMoveAndDisplay()
           pause = true;
         }
 
-        // if (timeStep == 500) {
-        // 	Save_Position(body[0]);
-        // 	exit(0);
-        // }
+        if (timeStep == 1000) {
+        	Save_Position(body[0]);
+        	exit(0);
+        }
 		
 		//optional but useful: debug drawing
 		m_dynamicsWorld->debugDrawWorld();

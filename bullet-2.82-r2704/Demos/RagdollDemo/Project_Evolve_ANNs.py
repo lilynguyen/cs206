@@ -22,18 +22,17 @@ def main():
 
 def Evolve():
 	fits = MatrixCreate(1, NUM_GENERATIONS)
-	fits = fits[0]
+	fits=fits[0]
 
 	parent = MatrixCreate(NUM_SENSORS, NUM_MOTORS)
-	parent = MatrixRandomize(parent)#*2-1
+	parent = MatrixRandomize(parent)*2-1
 	parentFitness = Fitness3_Get(parent)
 
 	for currentGeneration in range(len(fits)):
-		fits[currentGeneration] = parentFitness
-		child = MatrixPerturb(parent, 0.05)
+		child = MatrixPerturb(parent, 0.50)
 		childFitness = Fitness3_Get(child)
 		print currentGeneration, parentFitness, childFitness
-		if float(parentFitness) < float(childFitness):
+		if float(childFitness) > float(parentFitness):
 			parent = deepcopy(child)
 			parentFitness = deepcopy(childFitness)
 			successWeight = 'success.dat'
@@ -46,10 +45,11 @@ def MatrixCreate(rows, columns):
 	return np.zeros((rows, columns),dtype='f')
 
 def MatrixRandomize(matrix):
+	c = copy.deepcopy(matrix)
 	for i in range(len(matrix)):
 		for j in range(len(matrix[0])):
-			matrix[i][j] = random.uniform(-1,1)
-	return matrix
+			c[i][j] = random.uniform(-1,1)
+	return c
 
 def MatrixPerturb(matrix, prob):
 	c = copy.deepcopy(matrix)
@@ -59,15 +59,15 @@ def MatrixPerturb(matrix, prob):
 				c[i][j] = random.uniform(-1,1)
 	return c
 
-def Fitness3_Get(synapses):
+def Fitness3_Get(randomValues):
     weightsFileName = 'weights.dat'
     fitFileName = 'fits.dat'
-    Send_Synapse_Weights_ToFile(synapses,weightsFileName)
+    Send_Synapse_Weights_ToFile(randomValues,weightsFileName)
 
     os.system('./AppRagdollDemo');
 
     while not os.path.exists(fitFileName):
-    	time.sleep(0.2)
+    	time.sleep(0.5)
 
     with open(fitFileName, 'r') as w:
     	fitness = w.readline()

@@ -37,9 +37,9 @@ class RagdollDemo : public GlutDemoApplication
  	double weights[4][8];
  	int timeStep;
 
- // 	btRigidBody*      stairBody[9]; // one main body, 4x2 leg segments 
-	// btCollisionShape* stairGeom[9]; 
-	// int stairIDs[9];
+ 	btRigidBody*      stairBody[40]; // one main body, 4x2 leg segments 
+	btCollisionShape* stairGeom[40]; 
+	int stairIDs[41];
 
 public:
 	int touches[10];
@@ -80,7 +80,7 @@ public:
 		return demo;
 	}
 
-	void CreateBox(int index, double x, double y, double z, double length, double width, double height, int type);
+	void CreateBox(int index, double x, double y, double z, double length, double width, double height);
 
 	void CreateCylinder(int index, double x, double y, double z, double radius, double length, char axis);
 
@@ -106,7 +106,7 @@ public:
 
 /////	
 
-	// void CreateStair(int index, double x, double y, double z, double length, double width, double height);
+	void CreateStair(int index, double x, double y, double z, double length, double width, double height);
 
 };
 
